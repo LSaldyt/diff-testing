@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import subprocess, shutil, pickle, glob, sys, os
+
+def main(args):
+    assert len(args) == 2
+    a, b = args
+    with open(a, 'r') as afile:
+        acontent = afile.read()
+    with open(b, 'r') as bfile:
+        bcontent = bfile.read()
+
+    print(acontent == bcontent)
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
